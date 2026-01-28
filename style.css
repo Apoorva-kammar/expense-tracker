@@ -1,0 +1,57 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f6f8;
+}
+
+.container {
+    width: 420px;
+    margin: 30px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+.form input, .form select, .form button {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0;
+}
+
+button {
+    cursor: pointer;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    background: #eee;
+    margin: 6px 0;
+    padding: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.actions button {
+    margin-left: 5px;
+}
+
+.undo {
+    background: #333;
+    color: white;
+    padding: 8px;
+    margin: 10px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.hidden {
+    display: none;
+}

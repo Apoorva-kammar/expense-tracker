@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Daily Expense Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>💸 Daily Expense Tracker</h1>
+
+    <!-- FORM -->
+    <div class="form">
+        <input type="text" id="title" placeholder="Expense title">
+        <input type="number" id="amount" placeholder="Amount">
+        <input type="date" id="date">
+
+        <select id="category">
+            <option value="">Select Category</option>
+            <option>Food</option>
+            <option>Transport</option>
+            <option>Shopping</option>
+            <option>Bills</option>
+            <option>Others</option>
+        </select>
+
+        <button id="saveBtn" onclick="saveExpense()">Add Expense</button>
+    </div>
+
+    <!-- UNDO -->
+    <div id="undoBox" class="undo hidden">
+        Expense deleted
+        <button onclick="undoDelete()">Undo</button>
+    </div>
+
+    <!-- FILTER -->
+    <input type="month" id="monthFilter" onchange="applyMonthFilter(this.value)">
+
+    <!-- LIST -->
+    <ul id="expenseList"></ul>
+
+    <!-- ANALYTICS -->
+    <h2>📊 Analytics</h2>
+    <p>Total: ₹<span id="total">0</span></p>
+    <p>Top Category: <span id="topCategory">-</span></p>
+
+    <canvas id="chart"></canvas>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
