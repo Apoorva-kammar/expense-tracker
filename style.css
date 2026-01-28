@@ -1,57 +1,113 @@
+/* =========================
+   BODY & BACKGROUND
+   ========================= */
 body {
-    font-family: Arial, sans-serif;
-    background: #f4f6f8;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 30px;
+
+    /* Animated gradient background (yellow removed) */
+    background: linear-gradient(270deg, #ff6ec4, #7873f5, #4ade80);
+    background-size: 800% 800%;
+    animation: gradientAnimation 15s ease infinite;
 }
 
+/* Gradient animation */
+@keyframes gradientAnimation {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+}
+
+/* =========================
+   CONTAINER
+   ========================= */
 .container {
     width: 420px;
-    margin: 30px auto;
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.95); /* slightly transparent for gradient to show through */
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25); /* depth */
+    position: relative;
+    z-index: 1;
 }
 
+/* Headings */
 h1, h2 {
     text-align: center;
+    color: #333;
+    margin-bottom: 15px;
 }
 
+/* Form Inputs */
 .form input, .form select, .form button {
     width: 100%;
-    padding: 8px;
-    margin: 5px 0;
+    padding: 10px;
+    margin: 6px 0;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 16px;
 }
 
+/* Input focus effect */
+.form input:focus,
+.form select:focus {
+    outline: none;
+    border-color: #7873f5;
+    box-shadow: 0 0 8px rgba(120, 115, 245, 0.5);
+}
+
+/* Button */
 button {
     cursor: pointer;
+    background: #7873f5;
+    color: white;
+    border: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
 }
 
-ul {
-    list-style: none;
-    padding: 0;
+button:hover {
+    background: #4ade80;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
 }
 
+/* List Items */
+ul { list-style: none; padding: 0; margin-top: 15px; }
 li {
-    background: #eee;
-    margin: 6px 0;
-    padding: 8px;
+    background: #f0f0f0;
+    margin: 8px 0;
+    padding: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border-radius: 8px;
+    transition: background 0.3s ease;
 }
+li:hover { background: #e0e0e0; }
 
-.actions button {
-    margin-left: 5px;
-}
-
+/* Undo Box */
 .undo {
     background: #333;
     color: white;
-    padding: 8px;
-    margin: 10px 0;
+    padding: 10px;
+    margin: 12px 0;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    border-radius: 8px;
 }
+.hidden { display: none; }
 
-.hidden {
-    display: none;
+/* Analytics Chart */
+#chart { margin-top: 15px; }
+
+/* Responsive */
+@media (max-width: 480px) {
+    .container { width: 90%; padding: 20px; }
 }
